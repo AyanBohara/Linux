@@ -29,6 +29,110 @@
     <p>head -> display the first 5 lines of a file</p>
     <p>tail -> display the last 5 lines of a file</p>
     <p>pwd -> print working directory</p>
+    <p>👤 whoami — who am I?
+
+        Tells you which user you’re logged in as.
+
+        whoami
+
+
+        Useful when:
+
+        multiple users
+
+        sudo confusion
+
+        “wait… am I root?” moments 😵‍💫
+
+        🧑‍🚀 sudo — do it as admin
+
+        Runs a command with root (admin) power.
+
+        sudo command
+
+
+        Example:
+
+        sudo apt update
+
+
+        Only users in sudo group can use it.
+
+        👉 Safer than logging in as root.
+
+        ➕ useradd — create user
+
+        Adds a new user.
+
+        sudo useradd username
+
+
+        Better (recommended):
+
+        sudo useradd -m username
+
+
+        -m → creates home directory
+
+        🔐 passwd — set/change password
+
+        Sets or changes user password.
+
+        sudo passwd username
+
+
+        Change your own password:
+
+        passwd
+
+        🔄 su — switch user
+
+        Switch to another user.
+
+        su username
+
+
+        Switch to root:
+
+        su -
+
+
+        Needs target user’s password.
+
+        👉 Difference:
+
+        su → asks root password
+
+        sudo → asks your password
+
+        🧑‍🤝‍🧑 Groups (quick but important)
+        Check user groups
+        groups username
+
+        Add user to sudo group
+        sudo usermod -aG sudo username
+
+
+        (-a = append, don’t mess this up 💀)
+
+        🧠 Real-world flow (ADMIN LIFE)
+        sudo useradd -m devuser
+        sudo passwd devuser
+        sudo usermod -aG sudo devuser
+        su - devuser
+        whoami
+
+
+        Boom. New user ready 🔥
+
+        📌 Super short comparison (INTERVIEW GOLD)
+        Command What it does
+        whoami shows current user
+        sudo run command as root
+        useradd create user
+        passwd set/change password
+        su switch user</p>
 </body>
+
 
 </html>
