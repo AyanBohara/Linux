@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linx All Command</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -132,6 +133,51 @@
         useradd create user
         passwd set/change password
         su switch user</p>
+    <br>
+    <br>
+    <h1>User and File management</h1>
+    <p>Day 6 of Learning Linux: Understanding Users with a Simple House Logic 🏠🐧
+        Today I learned user and group management in Linux, and the easiest way I understood it was by thinking of a
+        Linux system as a house. In this house, the root user (sudo) is the landlord who has full control, while normal
+        users are tenants living inside it.
+        Suppose Ayan is already living in the house. When a new person, Jethalal, wants to move in, only the landlord
+        can allow it. That’s why we create a user using sudo useradd -m jethalal. This command creates a new room (home
+        directory) for Jethalal inside the house.
+        Next comes the key to the room. The landlord is the only one who can give it, so Ayan uses sudo passwd jethalal.
+        Ayan enters his own password to prove he has permission, then sets a password for Jethalal. Even though Ayan
+        sets the password, he still cannot enter Jethalal’s room unless he switches users.
+        To actually become Jethalal, Ayan must use su jethalal. Now he is inside Jethalal’s room and can only do what
+        Jethalal is allowed to do. This helped me clearly understand the difference between sudo (temporary landlord
+        power) and su (becoming another user).
+        Finally, if Jethalal breaks the rules or doesn’t pay rent, the landlord has the authority to remove him from the
+        house completely using sudo userdel -r jethalal. This deletes the user along with the room assigned to him.
+        This simple analogy helped me understand how Linux manages users, permissions, and control. In additional, i
+        worked on: 🔹 User Management
+        useradd → created new users
+        passwd → set or updated user passwords
+        su → switched to another user
+        sudo → ran commands with admin (root) privileges
+        whoami → checked the current logged-in user
+        userdel -r → removed a user along with their home directory
+        🔹 Group Management
+        groupadd → created a new group
+        usermod -aG → added a user to a group
+        groupdel → deleted a group
+        id → checked user ID, group ID, and group membership
+        🔹 File Permissions & Ownership
+        ls -l → viewed file permissions, owner, and group
+        chmod → changed file permissions using numeric values (0–7)
+        umask → understood default permissions for new files
+        chgrp → changed group ownership of files
+        🔹 File Compression
+        zip → compressed files
+        unzip → extracted zipped files
+        Breaking permissions like rwxrwxrwx into real meaning and understanding how ownership works made Linux feel way
+        more logical today. Slowly building the foundation, one command at a time 💪
+        Learning in public. Staying consistent. Let’s go 🚀
+        hashtag#Linux hashtag#LearningLinux hashtag#LinuxBasics hashtag#UserManagement hashtag#FilePermissions
+        hashtag#CommandLine hashtag#Day6</p>
+
 </body>
 
 

@@ -1,0 +1,227 @@
+/* ===================================
+   GENERAL STYLES & RESET
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* ===================================
+   MAIN CONTAINER
+   =================================== */
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================================
+   HEADINGS - TOPIC SECTIONS
+   =================================== */
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin: 30px 0 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1:first-of-type {
+    margin-top: 0;
+}
+
+/* ===================================
+   CODE BLOCKS - COMMAND DEMONSTRATIONS
+   =================================== */
+pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 20px 0;
+    border-left: 5px solid #667eea;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ===================================
+   COMMAND DESCRIPTIONS
+   =================================== */
+p {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+p:hover {
+    background: #e9ecef;
+    border-left-color: #764ba2;
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================
+   SPECIFIC COMMAND STYLING
+   =================================== */
+/* Style commands with arrows (e.g., ls -> list directory) */
+p:has(::first-line) {
+    font-weight: 500;
+}
+
+/* Highlight command names */
+p::first-line {
+    font-weight: bold;
+    color: #667eea;
+    font-size: 1.1em;
+}
+
+/* ===================================
+   USER MANAGEMENT SECTION STYLING
+   =================================== */
+body > p:nth-last-of-type(1),
+body > p:nth-last-of-type(2) {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #764ba2;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* ===================================
+   EMOJI & SPECIAL CHARACTERS STYLING
+   =================================== */
+p:contains("👤"),
+p:contains("🧑‍🚀"),
+p:contains("➕"),
+p:contains("🔐"),
+p:contains("🔄") {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    border-left-color: #e17055;
+}
+
+/* ===================================
+   BREAK LINES SPACING
+   =================================== */
+br {
+    display: block;
+    margin: 10px 0;
+    content: "";
+}
+
+/* ===================================
+   SCROLLBAR STYLING
+   =================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+        padding: 15px;
+    }
+    
+    p {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    pre {
+        padding: 15px;
+        font-size: 12px;
+    }
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+p {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+        box-shadow: none;
+    }
+    
+    h1 {
+        background: #333;
+        color: white;
+        page-break-after: avoid;
+    }
+    
+    p {
+        page-break-inside: avoid;
+    }
+}
