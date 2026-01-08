@@ -107,8 +107,8 @@ p::first-line {
 /* ===================================
    USER MANAGEMENT SECTION STYLING
    =================================== */
-body > p:nth-last-of-type(1),
-body > p:nth-last-of-type(2) {
+body>p:nth-last-of-type(1),
+body>p:nth-last-of-type(2) {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     padding: 25px;
     border-radius: 10px;
@@ -166,17 +166,17 @@ br {
     body {
         padding: 20px;
     }
-    
+
     h1 {
         font-size: 1.8em;
         padding: 15px;
     }
-    
+
     p {
         font-size: 14px;
         padding: 12px;
     }
-    
+
     pre {
         padding: 15px;
         font-size: 12px;
@@ -191,6 +191,7 @@ br {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -214,13 +215,13 @@ p {
         padding: 0;
         box-shadow: none;
     }
-    
+
     h1 {
         background: #333;
         color: white;
         page-break-after: avoid;
     }
-    
+
     p {
         page-break-inside: avoid;
     }
