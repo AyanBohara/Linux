@@ -228,6 +228,152 @@
         #Linux #Networking #LinuxCommands #LearningInPublic #CommandLine #Day8
     </p>
 
+    <p>
+        1. Shebang
+        #!/bin/bash
+
+
+        This tells Linux: “Hey, use bash shell to run this script.”
+
+        Always goes at the top of a .sh file.
+
+        2. Comments / Metadata
+        ###########
+        # Discusses of autor/ Metadata:
+        # Author: Ayan
+        # Date: 01/11/2026
+        #
+        # This script outputs the node health
+        #
+        # Version v1
+        # ####################
+
+
+        Lines starting with # are comments → they don’t run, just explain stuff.
+
+        Here you wrote:
+
+        Who made it (Author)
+
+        When it was made (Date)
+
+        What it does (outputs node health)
+
+        Version info
+
+        Basically, it’s a note for humans, not the computer.
+
+        3. Commands that actually run
+        df -h
+
+
+        df → disk free, shows storage usage
+
+        -h → human-readable (GB, MB, etc.)
+
+        free -g
+
+
+        free → shows memory usage
+
+        -g → display in GB
+
+        nproc
+
+
+        nproc → tells you number of CPU cores
+
+        So when you run this script, it’s like a quick health check for your machine: disk, RAM, CPU.
+
+        4. Vim stuff at the end
+        :wq!:
+
+
+        That looks like you accidentally typed the vim save command inside the file.
+
+        You don’t need this in the script itself. The script should just have commands like df -h, free -g, etc.
+
+        Correct usage:
+
+        :wq! → you type this in vim, not in the file, to save and exit.
+
+        ✅ Clean Version of Your Script
+        #!/bin/bash
+        # Author: Ayan
+        # Date: 01/11/2026
+        # This script outputs the node health
+        # Version v1
+
+        df -h
+        free -g
+        nproc
+    </p>
+
+    <p>
+        Day 11 of My Linux Learning Journey: Scripts, Processes & Smart Monitoring 🐧💻
+
+        Today I went deep into Linux scripting and process management. Everything started feeling super practical, like
+        I can really automate tasks and monitor systems like a pro 👀
+
+        Here’s what I covered:
+
+        🔹 Vim & Shell Scripts
+
+        vim nodehealth.sh → created and edited scripts directly in terminal
+
+        chmod +x filename.sh → made scripts executable
+
+        ./filename.sh → ran scripts from the terminal
+        Basically, learned how to write, save, and run bash scripts without headaches 😅
+
+        🔹 Node & System Health Commands
+
+        df -h → checked disk usage in human-readable format
+
+        free -g → monitored memory usage
+
+        nproc → saw how many CPU cores are available
+
+        ps -ef → listed all running processes
+
+        ps -ef | grep "lib" → filtered for specific processes
+
+        ps -ef | grep "lib" | awk '{print $2}' → extracted just the process IDs
+        Now I can see what’s running, who owns it, and quickly get process details
+
+        🔹 Text Processing & Automation
+
+        awk → extract columns from command output like a spreadsheet
+
+        grep → search for patterns or keywords
+
+        Learned to combine commands with pipes (|) to filter, extract, and act on data automatically
+
+        🔹 Control & Safety in Scripts
+
+        if-else → made scripts decision-makers (check if file exists, choose actions)
+
+        for loops → run commands multiple times or over lists
+
+        set -e → stop scripts immediately if a command fails
+
+        set -x → debug scripts by showing commands as they run
+
+        🔹 Fetching Data from Web
+
+        curl → get web pages or APIs directly in terminal
+
+        wget → download files easily, resume interrupted downloads
+
+        💡 Takeaway:
+        Today I connected commands, scripting, and automation into a workflow. I can write scripts to monitor system
+        health, check files, and automate repetitive tasks — feels like I’m leveling up from “just typing commands” to
+        controlling Linux like a mini DevOps engineer 💪
+
+        Learning daily, breaking things safely, and building my Linux toolkit step by step 🚀
+
+        #Linux #ShellScripting #DevOps #Automation #AWK #Grep #Vim #Curl #Wget #LinuxCommands #Day11
+    </p>
 </body>
 
 
