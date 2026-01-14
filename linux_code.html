@@ -374,6 +374,154 @@
 
         #Linux #ShellScripting #DevOps #Automation #AWK #Grep #Vim #Curl #Wget #LinuxCommands #Day11
     </p>
+    <p>1️⃣ Setting up AWS CLI (Foundation)
+
+        Before anything works, we configure AWS access:
+
+        aws configure
+
+
+        This stores:
+
+        Access Key
+
+        Secret Key
+
+        Region
+
+        Output format
+
+        👉 Now your terminal can talk to AWS securely.
+
+        2️⃣ Writing a Bash Script (Automation Brain 🧠)
+
+        You create a script:
+
+        vim awsresourcetracker.sh
+
+
+        This script is responsible for collecting AWS resource info.
+
+        3️⃣ Tracking AWS Resources (Commands Used)
+        🔹 List S3 Buckets
+        aws s3 ls
+
+
+        Shows all S3 buckets → storage overview.
+
+        🔹 List EC2 Instances
+        aws ec2 describe-instances
+
+
+        Returns huge JSON output with:
+
+        instance IDs
+
+        state
+
+        type
+
+        region
+
+        Too messy for managers 😵
+
+        🔹 List Lambda Functions
+        aws lambda list-functions
+
+
+        Shows all serverless functions.
+
+        🔹 List IAM Users
+        aws iam list-users
+
+
+        Critical for security & access audits.
+
+        4️⃣ Making Output Human-Readable
+        🔹 Paging output
+        ./awsresourcetracker.sh | more
+
+
+        Why?
+
+        Large output
+
+        Easy scrolling
+
+        Better readability
+
+        5️⃣ Debugging & Filtering JSON with jq
+
+        AWS outputs data in JSON (machine-friendly, not human-friendly).
+
+        🔹 Example:
+        aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
+
+
+        What this does:
+
+        jq → JSON parser
+
+        Filters only Instance IDs
+
+        Removes unnecessary noise
+
+        👉 Manager doesn’t need 500 lines of JSON — just the important info.
+
+        🔹 YAML equivalent tool
+
+        jq → JSON
+
+        yq → YAML
+
+        Used when working with:
+
+        Kubernetes
+
+        CloudFormation
+
+        CI/CD configs
+
+        6️⃣ Storing Output in Files (Reporting 📄)
+
+        To keep records, you redirect output:
+
+        aws s3 ls >> resource-tracker.txt
+        aws lambda list-functions >> resource-tracker.txt
+
+
+        Why >>?
+
+        Appends data
+
+        Keeps history
+
+        No overwriting
+
+        Now you have a single report file with all AWS resources.
+
+        7️⃣ Automation with Cron Job (Final Boss 🔥)
+
+        Manual execution = ❌
+        Automation = ✅
+
+        You schedule the script:
+
+        crontab -e
+
+
+        Example:
+
+        0 9 * * * /home/user/awsresourcetracker.sh
+
+
+        This means:
+
+        Runs every day at 9 AM
+
+        Automatically updates the resource report
+
+        No human interventionn</p>
 </body>
 
 
